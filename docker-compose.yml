@@ -1,0 +1,15 @@
+services:
+  backend:
+    build: ./backend
+    image: polling-backend:latest
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/.env
+
+  frontend:
+    build: ./frontend/polling-app
+    image: polling-frontend:latest
+    ports:
+      - "5173:5173"
+    
